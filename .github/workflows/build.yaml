@@ -73,14 +73,14 @@ jobs:
           # rpm packages invert the - and _
           RPMVERSION=$(echo $VERSION | sed -r 's/-/_/g')
           make cloudflared-rpm
-          mv cloudflared-$RPMVERSION-1.s390x.rpm $ARTIFACT_DIR/cloudflared.rpm
+          mv cloudflared-$RPMVERSION-1.s390x.rpm $ARTIFACT_DIR/cloudflared-s390x.rpm
 
           # deb packages
           make cloudflared-deb
-          mv cloudflared\_$VERSION\_s390x.deb $ARTIFACT_DIR/cloudflared.deb
+          mv cloudflared\_$VERSION\_s390x.deb $ARTIFACT_DIR/cloudflared-s390x.deb
 
           # linux binary
-          mv cloudflared $ARTIFACT_DIR/cloudflared
+          mv cloudflared $ARTIFACT_DIR/cloudflared-s390x
 
         env:
           TARGET_ARCH: s390x
